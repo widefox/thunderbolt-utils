@@ -4,6 +4,10 @@
 
 thunderbolt-utils is licensed under the terms in [LICENSES](https://github.com/intel/thunderbolt-utils/tree/main/LICENSES). By contributing to the project, you agree to the license and copyright terms therein and release your contribution under these terms.
 
+### Branches to create pull requests
+
+thunderbolt-utils incorporates 'libtbt' branch specifically for the 'lstbt' library and the 'dma_support' branch specifically for the DMA porting. Its strongly suggested to use these branches for the respective contributions.
+
 ### Sign your work
 
 Please use the sign-off line at the end of the patch. Your signature certifies that you wrote the patch or otherwise have the right to pass it on as an open-source patch. The rules are pretty simple: if you can certify
