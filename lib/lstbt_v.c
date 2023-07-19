@@ -37,10 +37,11 @@ static void dump_name(const char *router)
 	snprintf(d_path, sizeof(d_path), "cat %s%s/device_name", tbt_sysfs_path, router);
 	device = do_bash_cmd(d_path);
 
-	printf("%s %s ", vendor, device);
-
-	free(vendor);
-	free(device);
+	printf("%s %s ", dnull(vendor), dnull(device));
+	if (vendor != NULL)
+		free(vendor);
+	if (device != NULL)
+		free(device);
 }
 
 static void dump_spaces(u64 spaces)

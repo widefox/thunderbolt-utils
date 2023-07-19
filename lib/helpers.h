@@ -76,3 +76,8 @@ int __main(char *domain, char *depth, char *device, bool retimer, bool tree,
 	   u8 verbose);
 char** ameliorate_args(int argc, char **argv);
 bool is_input_printable(int argc, char **argv);
+
+static inline const char *dnull(const char *s)
+{
+	return s != NULL ? s : "--";
+}

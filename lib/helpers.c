@@ -652,11 +652,14 @@ void dump_vdid(const char *router)
 
 	snprintf(did_path, sizeof(did_path), "cat %s%s/device", tbt_sysfs_path, router);
 	did = do_bash_cmd(did_path);
-
-	printf("ID %04x:%04x ", strtouh(vid), strtouh(did));
-
-	free(vid);
-	free(did);
+	if (vid != NULL && did != NULL)
+		printf("ID %04x:%04x ", strtouh(vid), strtouh(did));
+	else
+		printf("ID -- ");
+	if (vid != NULL)
+		free(vid);
+	if (did != NULL)
+		free(did);
 }
 
 /* Dump the generation of the router */

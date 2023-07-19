@@ -78,9 +78,9 @@ static void dump_retimer_nvm_version(const char *retimer)
 		 retimer);
 
 	ver = do_bash_cmd(path);
-	printf("NVM %s\n", ver);
-
-	free(ver);
+	printf("NVM %s\n", dnull(ver));
+	if (ver != NULL)
+		free(ver);
 }
 
 /* Dumps the retimer */
@@ -124,12 +124,16 @@ static bool dump_retimer(const char *retimer)
 	snprintf(did_path, sizeof(did_path), "cat %s%s/device", tbt_sysfs_path, retimer);
 	did = do_bash_cmd(did_path);
 
-	printf("ID %04x:%04x ", strtouh(vid), strtouh(did));
+	if (vid != NULL && did != NULL)
+		printf("ID %04x:%04x ", strtouh(vid), strtouh(did));
+	else
+		printf("-- ");
 
 	dump_retimer_nvm_version(retimer);
-
-	free(vid);
-	free(did);
+	if (vid != NULL)
+		free(vid);
+	if (did != NULL)
+		free(did);
 	free(router);
 
 	return true;
