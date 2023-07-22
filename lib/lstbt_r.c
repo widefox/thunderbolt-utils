@@ -127,7 +127,7 @@ static bool dump_retimer(const char *retimer)
 	if (vid != NULL && did != NULL)
 		printf("ID %04x:%04x ", strtouh(vid), strtouh(did));
 	else
-		printf("-- ");
+		printf("ID -- ");
 
 	dump_retimer_nvm_version(retimer);
 	if (vid != NULL)
