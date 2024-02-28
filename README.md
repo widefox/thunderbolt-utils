@@ -22,15 +22,21 @@ Utilities included:
 ## Building and installing lstbt
 lstbt is present in the ./lib subdirectory of the software.
 
-Steps:<br>
-1. `cd ./lib`
-2. `make`
+Steps:
+
+```bash
+cd ./lib
+make
+```
 
 ## Uninstalling lstbt and cleaning up the build
 
-Steps:<br>
-1. `cd ./lib`
-2. `make clean`
+Steps:
+
+```bash
+cd ./lib
+make clean
+```
 
 Note: The library installs itself in the /usr/bin filesystem path, hence pertinent permissions are required for the user to alter it.
 

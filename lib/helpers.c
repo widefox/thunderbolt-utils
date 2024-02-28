@@ -68,6 +68,8 @@ static u8 get_total_adps_debugfs(const char *router)
 
 	snprintf(path, sizeof(path), "ls %s%s | grep 'port'", tbt_debugfs_path,
 		 router);
+	/* rewrite the above without the shell commands */
+
 	root_cmd = switch_cmd_to_root(path);
 
 	item = do_bash_cmd_list(root_cmd);
